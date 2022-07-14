@@ -22,8 +22,8 @@ public class P5_CRUD {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        String url = "jdbc:mysql://localhost:3306/batch60_61?serverTimezone=UTC";
-        Connection con = DriverManager.getConnection(url, "root", "elif.12345");  //database baglantisi icin
+        String url = "jdbc:mysql://localhost:3306/DB1?serverTimezone=UTC";
+        Connection con = DriverManager.getConnection(url, "root", "Enter your password here.");  //database baglantisi icin
 
         Statement st = con.createStatement();  //query calistirmak icin
 

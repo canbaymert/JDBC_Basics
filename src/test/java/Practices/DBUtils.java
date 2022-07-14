@@ -13,15 +13,12 @@ public class DBUtils {
     private static ResultSet resultSet;
 
 
-    //BU METHOD COK KULLANACAGIZ
-    //createConnection database e baglanmak icin. Burda url, username, password u kullanarak database baglaniyoruz
-    //Database e ne zaman baglanmak isterse bu methodu cagrabiliriz
-    //Bu method u data cok BeforeMethod icinde setup icin kullanacagiz
+    // createConnection is a reusable method to connect to the database
     public static void createConnection() {
 
-        String url="jdbc:mysql://184.168.194.58:1433;databaseName=kaolapalacedb;user=kullanici adiniz;password=sifreniz!";
-        String username="kullanici adiniz";
-        String password="sifreniz";
+        String url="jdbc:mysql://184.168.194.58:1433;databaseName=DB1;user=your username;password=your password";
+        String username="Enter your username here.";
+        String password="Enter your password here.";
         try {
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
@@ -29,9 +26,7 @@ public class DBUtils {
             e.printStackTrace();
         }
     }
-    //BU METHODU COK KULLANACAGIZ
-    //Bu method DatabaDBUTilsse e baglandiktan sonra Yazilan query yi calistirmak icin
-    //Bu method da statement ve resultset objesini olusturup query run ediyoruz
+    // executeQuery is a reusable method to run the given query after connection to the database is established.
     public static void executeQuery(String query) {
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -46,7 +41,7 @@ public class DBUtils {
             e.printStackTrace();
         }
     }
-    //Database baglantisini sonlandirmak icin. Bu Mehtod u test tamamladiktan sonra kullaniriz
+    // closeConnection is a reusable method to end the connection with the database.
     public static void closeConnection() {
         try {
             if (resultSet != null) {
@@ -62,11 +57,6 @@ public class DBUtils {
             e.printStackTrace();
         }
     }
-    //Sonraki 3 methodu sadece connection,statement,resultset kullanmak istedigimizde kullaniriz
-    //connection =>DBUtils.getConnection()
-    //statement => DBUtils.getResultset()
-    //resultSet => DBUtils.getResultset()
-    //getStatement method statement object i olusturmak icin
 
     public static Statement getStatement() {
         try {
@@ -78,9 +68,8 @@ public class DBUtils {
         return statement;
     }
 
-    //getConnection method Connection object i olusturmak icin. Bu method create createConnectiondan farkli olarak connection objesi return ediyor
+
     public static Connection getConnection() {
-     //   String url = "jdbc:mysql://184.168.194.58:1433/kaolapalacedb";
         String url="jdbc:mysql://184.168.194.58:1433;databaseName=kaolapalacedb;user=manager;password=Manager1!";
         String username="manager";
         String password="Manager1!";
@@ -93,7 +82,6 @@ public class DBUtils {
         return connection;
     }
 
-    //getResultset method Resultset object i olusturmak icin.
     public static ResultSet getResultset() {
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -104,7 +92,6 @@ public class DBUtils {
         return resultSet;
     }
 
-    //Table da kac satir var
     public static int getRowCount() throws Exception {
         resultSet.last();
         int rowCount = resultSet.getRow();
@@ -209,7 +196,7 @@ public class DBUtils {
         return rowList;
     }
 
-    /*
+    /**
      * @return List of columns returned in result set
      */
     public static List<String> getColumnNames(String query) {

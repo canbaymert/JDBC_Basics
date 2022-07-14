@@ -8,9 +8,7 @@ public class P1_ReadData {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        //hata alanlar Class.forName("com.mysql.jdbc.Driver"); yapistirsin
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/batch60_61?serverTimezone=UTC", "root", "elif.12345");
-
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB1?serverTimezone=UTC", "root", "Enter your password here.");
         Statement st = con.createStatement(); //query calistirmak icin
 
         // Q1: Talebeler tablesundan tum recordsı listeleyiniz.

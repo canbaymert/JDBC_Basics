@@ -5,34 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a0754dc-895a-4a48-95b3-379fcdb00d8d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DatabaseUtilty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Practices/DBUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Practices/Ders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Practices/Notlar/App_JDBSnedir.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Practices/Notlar/JDBC_buyukResim.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Practices/Notlar/Java Data Base Connectivity.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Practices/Notlar/ResultSetMthods.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Practices/P1_ReadData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Practices/P2_ReadData_Different.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Practices/P3_DDL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Practices/P4_DML_Insert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Practices/P5_CRUD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Query01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Query02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Query03.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Query04.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Query05.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Query06.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Query07.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Query08.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Query09.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Query10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Urun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Practices/P1_ReadData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practices/P1_ReadData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Practices/P2_ReadData_Different.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practices/P2_ReadData_Different.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Practices/P3_DDL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practices/P3_DDL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Practices/P4_DML_Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practices/P4_DML_Insert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Practices/P5_CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practices/P5_CRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Query03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Query03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Query08.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Query08.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Query09.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Query09.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Query10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Query10.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Urun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/QueryProduct_POJO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
