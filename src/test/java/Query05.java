@@ -20,11 +20,11 @@ public class Query05 {
         //st.execute(query);
         System.out.println("Workers table has been created.");
 
-        // Q: Delete the workers table.
+        // Q: Delete the table workers .
         st.execute("drop table workers");
         System.out.println("Workers table has been deleted.");
 
-        //Q: Add two columns to the workers table name varchar(20), city varchar(10) 
+        //Q: Add two columns to the table workers name varchar(20), city varchar(10)
         st.execute("alter table workers add name varchar(20)");
         st.execute("alter table workers add city varchar(10)");
         System.out.println("2 columns has been added.");

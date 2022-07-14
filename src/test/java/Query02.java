@@ -10,7 +10,7 @@ public class Query02 {
 
         Statement st = con.createStatement();
 
-        // Q01: Get the data from students table
+        // Q01: Get the data from table students
 
         ResultSet data = st.executeQuery("select * from students where sex = 'M'");
 

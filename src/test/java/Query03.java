@@ -10,7 +10,7 @@ public class Query03 {
 
         Statement st = con.createStatement();
 
-        // Q1: Print the data from the departments table
+        // Q1: Print the data from the table departments
 
         ResultSet data = st.executeQuery("select * from departments");
 

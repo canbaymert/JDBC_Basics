@@ -11,7 +11,7 @@ public class P1_ReadData {
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB1?serverTimezone=UTC", "root", "Enter your password here.");
         Statement st = con.createStatement();
 
-        // Q1: Print all records on the students table
+        // Q1: Print all records on the table students
 
         ResultSet records = st.executeQuery("select * from students");
         while (records.next()) {
@@ -19,7 +19,7 @@ public class P1_ReadData {
                     records.getString(3), records.getInt(4));
         }
 
-        // Q2: Print all records on the students table with a greater exam point than 90
+        // Q2: Print all records on the table students with a greater exam point than 90
         ResultSet records90 = st.executeQuery("select * from students where exam_point>90");
 
         while (records90.next()) {

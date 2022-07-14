@@ -15,7 +15,7 @@ public class Query09 {
 
         PreparedStatement table = con.prepareStatement("insert into products values(?, ?, ?)");
 
-        // Q: Add the given data to the products table
+        // Q: Add the given data to the table products
 
         List<QueryProduct_POJO> records = new ArrayList<>();
         records.add(new QueryProduct_POJO(200, "Asus", 7500));

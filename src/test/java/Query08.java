@@ -13,7 +13,7 @@ public class Query08 {
         Statement st = con.createStatement();
 
         // Q1: Create a table named Products (id int, name varchar(10), price int)
-        //st.execute("create table products (id int, name varchar(10), price int)");
+        // st.execute("create table products (id int, name varchar(10), price int)");
 
         // Q2: Add all the given data to the products table
         // Use PreparedStatement
