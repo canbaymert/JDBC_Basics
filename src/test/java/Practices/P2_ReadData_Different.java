@@ -11,59 +11,49 @@ public class P2_ReadData_Different {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB1?serverTimezone=UTC", "root", "Enter your password here.");
 
-            Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY); //result set scroll duyarsiz, sadece okuma
-            // ilk satirdaki ilk objeyi yazdiralim
+            Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY); 
+           
 
             String query = "Select * from personnel";
             ResultSet resultSet = st.executeQuery(query);
             System.out.println(resultSet.getRow()); //0
-            resultSet.first(); //bizi ilk kayida goturur
-            Object ilkSAtirdakiObje = resultSet.getObject(1);
-            System.out.println(ilkSAtirdakiObje.toString()); //123456789
+            resultSet.first(); // Go to the first record
+            Object firstObject = resultSet.getObject(1);
+            System.out.println(firstObject.toString()); // 123456789
 
-            // ikinci satirdaki ilk objeyi yazdiralim
+            // Print the object on the second row.
             resultSet.next();
-            Object ikinciSatirdakiObje = resultSet.getObject(1);
-            System.out.println(ikinciSatirdakiObje.toString());
+            Object secondObject = resultSet.getObject(1);
+            System.out.println(secondObject.toString());
 
             
-            // ilk sutundaki 5.degeri yazdiralim
+            // Print the data on the row:5 column:1
 
             resultSet.absolute(5);
-            Object besinciDeger = resultSet.getObject(1);
-            System.out.println(besinciDeger.toString());
-
-            // 0.satira gitmemizin sebebi while sorgusu icerisinde bulunan resultSet.next() in bizi
-            // birinci kayda goturmesi icindir. Eger 1.satira gidecek olsak while icindeki kod yuzunden yazdirmaya
-            // 2.satirdan baslar, tum listeyi alamayiz
-
-            // Tum listeyi yazdirmak istersek;
-
-            resultSet.absolute(0);
+            Object givenData = resultSet.getObject(1);
+            System.out.println(givenData.toString());
+            
+            // Print all the list
+            
+            resultSet.absolute(0);  // Must return to first row first
             while(resultSet.next()){
-                Object idler =resultSet.getObject(1); //1. kolondaki butun objeleri getirir
-                System.out.println(idler);
+                Object ids =resultSet.getObject(1);
+                System.out.println(ids);
             }
 
 
             resultSet.absolute(0);
             while(resultSet.next()){
-                Object nameler =resultSet.getObject("name"); //2. kolondaki butun objeleri getirir
-                System.out.println(nameler);
+                Object names =resultSet.getObject("name");
+                System.out.println(names);
             }
 
 
             resultSet.absolute(0);
             while(resultSet.next()){
-                Object cityler =resultSet.getObject("city"); //3. kolondaki butun objeleri getirir
-                System.out.println(cityler);
+                Object cities =resultSet.getObject("city");
+                System.out.println(cities);
             }
-
-
-
-
-
-
 
         }
 

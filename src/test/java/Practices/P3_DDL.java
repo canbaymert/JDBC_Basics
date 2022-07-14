@@ -6,24 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class P3_DDL {
-    /*
-                 A) CREATE TABLE, DROP TABLE, ALTER TABLE gibi DDL ifadeleri icin sonuc kümesi (ResultSet)
-                    dondurmeyen metotlar kullanilmalidir. Bunun icin JDBC’de 2 alternatif bulunmaktadir.
-                       1) execute() metodu
-                       2) excuteUpdate() metodu.
-
-                 B)   - execute() metodu her tur SQL ifadesiyle kullanibilen genel bir komuttur.
-                      - execute(), Boolean bir deger dondurur.
-                      - DDL islemlerin false dondururken, DML islemlerinde true deger dondurur.(ResultSet olusturur)
-                      - Ozellikle hangi tip SQL ifadesinin kullanilmasinin gerektiginin belli olmadigi
-                        durumlarda tercih edilmektedir.
-
-                 C) - executeUpdate() metodu ise INSERT, Update gibi DML islemlerinde yaygin kullanilir.
-                    -  bu islemlerde islemden etkilenen satir sayisini dondurur.
-                    - Ayrıca, DDL islemlerinde de kullanilabilir ve bu islemlerde 0 dondurur.
-
-                  execute() her turlu SQL kjomutuyla kullanilir .......  DDL ---> False    DML----> True
-                  executeUpdate()  DDL ----> 0           DML ----->etkilenen satir sayisini datar
+            /*
+                  execute() returns with             DDL : False    DML : True
+                  executeUpdate() returns with       DDL : 0  DML : Number of the added rows.
              */
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
@@ -32,53 +17,48 @@ public class P3_DDL {
 
         Statement st = con.createStatement();
 
-        // Q: markalar adında bir table oluşturunuz. marka_id int, marka_name VARCHAR(15), calisan_sayisi int
+        // Q: Create a table named brands. brand_id int, brand_name VARCHAR(15), number_of_employees int
 
-            String createQuery = "create table markalar(marka_id int, marka_name VARCHAR(15), calisan_sayisi int)";
-        //1.yontem : execute () methodu ile
-        boolean s1=st.execute(createQuery);
-        System.out.println("markalr tablesu olusturuldu " +s1);  //markalr tablesu olusturuldu false
+        String createQuery = "create table brands(brand_id int, brand_name VARCHAR(15), number_of_employees int)";
 
+        // With execute () method
+        boolean s1 = st.execute(createQuery);
+        System.out.println("Brands table has been created " + s1);
 
-        //2.yontem : executeUpdate() methodu ile
+        // With executeUpdate() method
 
-    //    int s2=st.executeUpdate(createQuery);
-    //    System.out.println("markalr tablesu olusturuldu " +s2);  //markalr tablesu olusturuldu 0
+        int s2 = st.executeUpdate(createQuery);
+        System.out.println("Brands table has been created " + s2);
 
-        // Q: markalar tablesunu siliniz
+        // Q: Delete the table brands
 
-    //   String dropQuery = "DROP table markalar";
-    //   st.execute(dropQuery);
-    //   System.out.println("markalar tabllosu silindi...");
+        String dropQuery = "DROP table brands";
+        st.execute(dropQuery);
+        System.out.println("Brands table has been deleted");
 
-        // Q : markalar tablesuna yeni bir sutun {sube_sayisi int} ekleyiniz
+        // Q : Add a new column to the table brands  {number_of_offices int}
 
-    //   String alterQuery = "ALTER table markalar ADD sube_sayisi int";  //default olarak sona ekler
-    //   st.executeUpdate(alterQuery);
+        String alterQuery = "ALTER table brands ADD number_of_offices int";  // Adds to the end as default
+        st.executeUpdate(alterQuery);
 
-        // Q : markalar tablesuna yeni bir sutun {sube_sayisi int} ekleyiniz, ancak bu sutunun yeri marka_id den sonra olsun
+        // Q : Add a new column to the table brands after brand_id {number_of_departments int}
 
-    //    String alterQuery2 =  "ALTER table markalar ADD sube_sayisi int AFTER marka_id";
-    //    st.executeUpdate(alterQuery2);
+        String alterQuery2 = "ALTER table brands ADD number_of_departments int AFTER brand_id";
+        st.executeUpdate(alterQuery2);
 //
-        // Q : markalar tablesunun adini  brands olarak degistiriniz
+        // Q : Rename the table brands as brand
 
-   //    String alterQuery3 = "Alter table markalar RENAME TO brands";
-   //    st.execute(alterQuery3);
-   //    System.out.println("table ismi brands olarak degisti..");
-
-        // Q : markalar tablesunda marka_name sutununu name olarak degistiriniz
-
-     //   String alterQuery4 = "Alter table markalar RENAME column marka_name to name";
-     //   st.execute(alterQuery4);
-     //   System.out.println("sutun ismi degisti..");
-
-        // Q : markalar tablesunda marka_name sutununun data type ini char(20) olarak degistiriniz
-
-        st.execute("alter table markalar modify marka_name char(20)");
-        System.out.println("marka ismin data type i degisti");
+        String alterQuery3 = "Alter table brands RENAME TO brands";
+        st.execute(alterQuery3);
 
 
+        // Q : Change the brand_name column as name
+
+        String alterQuery4 = "Alter table brands RENAME column brand_name to name";
+        st.execute(alterQuery4);
+
+        // Q : Change the data type of brand_name column as char(20)
+        st.execute("alter table brands modify brand_name char(20)");
 
     }
 }
