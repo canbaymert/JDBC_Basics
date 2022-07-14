@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a0754dc-895a-4a48-95b3-379fcdb00d8d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Practices/Ders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practices/POJO_Class.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Practices/P1_ReadData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practices/P1_ReadData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Practices/P2_ReadData_Different.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practices/P2_ReadData_Different.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Practices/P3_DDL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practices/P3_DDL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Practices/P4_DML_Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practices/P4_DML_Insert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Practices/P5_CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Practices/P5_CRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Query03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Query03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Query08.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Query08.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Query09.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Query09.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Query10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Query10.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Urun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/QueryProduct_POJO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -20,39 +20,39 @@ public class P5_CRUD {
 
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        java.lang.Class.forName("com.mysql.cj.jdbc.Driver");
 
         String url = "jdbc:mysql://localhost:3306/DB1?serverTimezone=UTC";
         Connection con = DriverManager.getConnection(url, "root", "Enter your password here.");  //database baglantisi icin
 
         Statement st = con.createStatement();  //query calistirmak icin
 
-        // Q: Dersler adında bir table olusturalım (id int, ders_name varchar(15), egitim_suresi int)
-        String createQuery = "create table dersler (id int, ders_name VARCHAR(15), egitim_suresi_gun int)";
+        // Q: Dersler adında bir table olusturalım (id int, class_name varchar(15), education_period int)
+        String createQuery = "create table dersler (id int, class_name VARCHAR(15), education_period_gun int)";
 
         st.execute(createQuery);
         System.out.println("table olusturuldu..");
 
         //Not : Ders diye bir pojo class olustururuz,
-        // id(int), ders_name(String), egitim_suresi(int) instance variable ları olusturup,
+        // id(int), class_name(String), education_period(int) instance variable ları olusturup,
         // Generate den constructor , getter setter ve toString() methodlari cagiririz
 
-        List<Ders> dersler = new ArrayList<>();
-        dersler.add(new Ders (100, "Java",50));
-        dersler.add(new Ders (101, "SQL",10));
-        dersler.add(new Ders (102, "JDBC",2));
-        dersler.add(new Ders (103, "APi",12));
-        dersler.add(new Ders (104, "JENKİNS",1));
-        dersler.add(new Ders (105, "Selenium",25));
-        dersler.add(new Ders (106, "Appium",10));
-        dersler.add(new Ders (107, "SDLC",10));
+        List<POJO_Class> dersler = new ArrayList<>();
+        dersler.add(new POJO_Class(100, "Java",50));
+        dersler.add(new POJO_Class(101, "SQL",10));
+        dersler.add(new POJO_Class(102, "JDBC",2));
+        dersler.add(new POJO_Class(103, "APi",12));
+        dersler.add(new POJO_Class(104, "JENKİNS",1));
+        dersler.add(new POJO_Class(105, "Selenium",25));
+        dersler.add(new POJO_Class(106, "Appium",10));
+        dersler.add(new POJO_Class(107, "SDLC",10));
 
         PreparedStatement table = con.prepareStatement("INSERT INTO dersler VALUES (?,?,?)");  //hangi formatta ise table o dataleri dusunerek value ları yazariz
 
-        for (Ders d : dersler){
+        for (POJO_Class d : dersler){
             table.setInt(1, d.getId());
-            table.setString(2, d.getDers_name());
-            table.setInt(3, d.getEgitim_suresi());
+            table.setString(2, d.getclass_name());
+            table.setInt(3, d.geteducation_period());
 
             table.addBatch();
         }
