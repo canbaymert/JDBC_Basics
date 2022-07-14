@@ -1,8 +1,8 @@
-public class Urun {
+public class QueryProduct_POJO {
 
     private int id;
     private String name;
-    private double fiyat;
+    private double price;
 
     public int getId() {
         return id;
@@ -12,34 +12,34 @@ public class Urun {
         this.id = id;
     }
 
-    public String getname() {
+    public String getName() {
         return name;
     }
 
-    public void setname(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public double getFiyat() {
-        return fiyat;
+    public double getPrice() {
+        return price;
     }
 
-    public void setFiyat(double fiyat) {
-        this.fiyat = fiyat;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public Urun(int id, String name, double fiyat) {
+    public QueryProduct_POJO(int id, String name, double price) {
         this.id = id;
         this.name = name;
-        this.fiyat = fiyat;
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "Urun{" +
+        return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", fiyat=" + fiyat +
+                ", price=" + price +
                 '}';
     }
 

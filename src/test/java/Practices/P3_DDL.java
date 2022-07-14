@@ -32,48 +32,48 @@ public class P3_DDL {
 
         Statement st = con.createStatement();
 
-        // Q: markalar adında bir tablo oluşturunuz. marka_id int, marka_name VARCHAR(15), calisan_sayisi int
+        // Q: markalar adında bir table oluşturunuz. marka_id int, marka_name VARCHAR(15), calisan_sayisi int
 
             String createQuery = "create table markalar(marka_id int, marka_name VARCHAR(15), calisan_sayisi int)";
         //1.yontem : execute () methodu ile
         boolean s1=st.execute(createQuery);
-        System.out.println("markalr tablosu olusturuldu " +s1);  //markalr tablosu olusturuldu false
+        System.out.println("markalr tablesu olusturuldu " +s1);  //markalr tablesu olusturuldu false
 
 
         //2.yontem : executeUpdate() methodu ile
 
     //    int s2=st.executeUpdate(createQuery);
-    //    System.out.println("markalr tablosu olusturuldu " +s2);  //markalr tablosu olusturuldu 0
+    //    System.out.println("markalr tablesu olusturuldu " +s2);  //markalr tablesu olusturuldu 0
 
-        // Q: markalar tablosunu siliniz
+        // Q: markalar tablesunu siliniz
 
     //   String dropQuery = "DROP table markalar";
     //   st.execute(dropQuery);
     //   System.out.println("markalar tabllosu silindi...");
 
-        // Q : markalar tablosuna yeni bir sutun {sube_sayisi int} ekleyiniz
+        // Q : markalar tablesuna yeni bir sutun {sube_sayisi int} ekleyiniz
 
     //   String alterQuery = "ALTER table markalar ADD sube_sayisi int";  //default olarak sona ekler
     //   st.executeUpdate(alterQuery);
 
-        // Q : markalar tablosuna yeni bir sutun {sube_sayisi int} ekleyiniz, ancak bu sutunun yeri marka_id den sonra olsun
+        // Q : markalar tablesuna yeni bir sutun {sube_sayisi int} ekleyiniz, ancak bu sutunun yeri marka_id den sonra olsun
 
     //    String alterQuery2 =  "ALTER table markalar ADD sube_sayisi int AFTER marka_id";
     //    st.executeUpdate(alterQuery2);
 //
-        // Q : markalar tablosunun adini  brands olarak degistiriniz
+        // Q : markalar tablesunun adini  brands olarak degistiriniz
 
    //    String alterQuery3 = "Alter table markalar RENAME TO brands";
    //    st.execute(alterQuery3);
-   //    System.out.println("tablo ismi brands olarak degisti..");
+   //    System.out.println("table ismi brands olarak degisti..");
 
-        // Q : markalar tablosunda marka_name sutununu name olarak degistiriniz
+        // Q : markalar tablesunda marka_name sutununu name olarak degistiriniz
 
      //   String alterQuery4 = "Alter table markalar RENAME column marka_name to name";
      //   st.execute(alterQuery4);
      //   System.out.println("sutun ismi degisti..");
 
-        // Q : markalar tablosunda marka_name sutununun data type ini char(20) olarak degistiriniz
+        // Q : markalar tablesunda marka_name sutununun data type ini char(20) olarak degistiriniz
 
         st.execute("alter table markalar modify marka_name char(20)");
         System.out.println("marka ismin data type i degisti");

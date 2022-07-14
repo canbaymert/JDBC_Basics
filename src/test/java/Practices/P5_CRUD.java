@@ -12,7 +12,7 @@ public class P5_CRUD {
     // Bunun icin;
     // 	1) data girisine uygun bir POJO(Plain Old Java Object) sinifi olusturulur.
     // 	2) POJO Class nesnelerini saklayacak bir collection olusturulur
-    // 	3) bir dongu ile kayitlar eklenir.
+    // 	3) bir dongu ile records eklenir.
 
     // PreparedStatement hizli ve guvenli yontem, bu yontemle cozecegiz
     // POJO class : plain old java object class, bu class calistirilmaz main i yok..
@@ -27,11 +27,11 @@ public class P5_CRUD {
 
         Statement st = con.createStatement();  //query calistirmak icin
 
-        // Q: Dersler adında bir tablo olusturalım (id int, ders_name varchar(15), egitim_suresi int)
+        // Q: Dersler adında bir table olusturalım (id int, ders_name varchar(15), egitim_suresi int)
         String createQuery = "create table dersler (id int, ders_name VARCHAR(15), egitim_suresi_gun int)";
 
         st.execute(createQuery);
-        System.out.println("tablo olusturuldu..");
+        System.out.println("table olusturuldu..");
 
         //Not : Ders diye bir pojo class olustururuz,
         // id(int), ders_name(String), egitim_suresi(int) instance variable ları olusturup,
@@ -47,7 +47,7 @@ public class P5_CRUD {
         dersler.add(new Ders (106, "Appium",10));
         dersler.add(new Ders (107, "SDLC",10));
 
-        PreparedStatement table = con.prepareStatement("INSERT INTO dersler VALUES (?,?,?)");  //hangi formatta ise tablo o dataleri dusunerek value ları yazariz
+        PreparedStatement table = con.prepareStatement("INSERT INTO dersler VALUES (?,?,?)");  //hangi formatta ise table o dataleri dusunerek value ları yazariz
 
         for (Ders d : dersler){
             table.setInt(1, d.getId());
@@ -61,7 +61,7 @@ public class P5_CRUD {
 
 
         System.out.println("Hersey Tamam");
-        //mySql de derslerin hizasindaki son simgeye basilirsa tablo SQL de gorunur..
+        //mySql de derslerin hizasindaki son simgeye basilirsa table SQL de gorunur..
     }
 
 }

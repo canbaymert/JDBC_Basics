@@ -10,7 +10,7 @@ public class P4_DML_Insert {
 
         Statement st = con.createStatement();
 
-        //Q: Calisanlar tablosuna yeni bir kayit ((10005, 'Gokhan Agar' , 15000)  ekleyelim ve eklenen kaydi teyit icin sorgulayalim.
+        //Q: Calisanlar tablesuna yeni bir kayit ((10005, 'Gokhan Agar' , 15000)  ekleyelim ve eklenen kaydi teyit icin sorgulayalim.
 
         String insertQuery = "INSERT INTO calisanlar VALUES(10005, 'Gokhan Agar' , 15000)";
         System.out.println(st.execute(insertQuery));
@@ -22,7 +22,7 @@ public class P4_DML_Insert {
             System.out.printf("%-6s %-15.15s %-8s\n", rs.getObject(1), rs.getObject(2),rs.getObject(3));
         }
 
-        //Q: Calisanlar tablosuna birden fazla yeni kayıt ekleyelim.
+        //Q: Calisanlar tablesuna birden fazla yeni kayıt ekleyelim.
 
         // 1.YONTEM
         // Ayri ayri sorgular ile datatabanina tekrar tekrar ulasmak islemlerin yavas yapilmasina yol acar.

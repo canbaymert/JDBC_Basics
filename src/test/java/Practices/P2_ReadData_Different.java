@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class P2_ReadData_Different {
 
-        //MySql de day4 de..personnel tablosu
+        //MySql de day4 de..personnel tablesu
 
 
         public static void main(String[] args) throws SQLException, ClassNotFoundException {

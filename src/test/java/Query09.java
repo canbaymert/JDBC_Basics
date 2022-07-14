@@ -11,30 +11,29 @@ public class Query09 {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/batch59?serverTimezone=UTC", "root", "Enter your password here.");
+        Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/DB1?serverTimezone=UTC", "root", "Enter your password here.");
 
-        PreparedStatement tablo = con.prepareStatement("insert into urunler values(?, ?, ?)");
+        PreparedStatement table = con.prepareStatement("insert into products values(?, ?, ?)");
 
-        // Q: urunler tablosuna aşağıdaki dataleri toplu bir şekilde etkileyin
+        // Q: Add the given data to the products table
 
-        List<Urun> kayitlar = new ArrayList<>();
-        kayitlar.add(new Urun(200, "Asus", 7500));
-        kayitlar.add(new Urun(201, "HP", 8500));
-        kayitlar.add(new Urun(202, "Acer", 9500));
-        kayitlar.add(new Urun(203, "Monster", 11500));
-        kayitlar.add(new Urun(204, "Klavye", 1200));
-        kayitlar.add(new Urun(205, "Fare", 1000));
+        List<QueryProduct_POJO> records = new ArrayList<>();
+        records.add(new QueryProduct_POJO(200, "Asus", 7500));
+        records.add(new QueryProduct_POJO(201, "HP", 8500));
+        records.add(new QueryProduct_POJO(202, "Acer", 9500));
+        records.add(new QueryProduct_POJO(203, "MSI", 11500));
+        records.add(new QueryProduct_POJO(204, "Razer", 1200));
+        records.add(new QueryProduct_POJO(205, "SteelSeries", 1000));
 
-        PreparedStatement tablo1 = con.prepareStatement("insert into urunler values(?, ?, ?)");
-        for(Urun each:kayitlar){
-            tablo1.setInt(1, each.getId());
-            tablo1.setString(2, each.getname());
-            tablo1.setDouble(3, each.getFiyat());
-            tablo1.addBatch();
+        PreparedStatement table1 = con.prepareStatement("insert into products values(?, ?, ?)");
+        for(QueryProduct_POJO each:records){
+            table1.setInt(1, each.getId());
+            table1.setString(2, each.getName());
+            table1.setDouble(3, each.getPrice());
+            table1.addBatch();
         }
-        tablo1.executeBatch();
-        System.out.println("dataler Database'e eklendi");
-
+        table1.executeBatch();
+        System.out.println("The given data has been added to the database.");
 
     }
 }
