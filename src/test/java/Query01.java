@@ -11,6 +11,7 @@ public class Query01 {
         Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/school?serverTimezone=UTC", "root", "Enter your password here");
         // Database Name = school
 
+
         //3) Statement: Creates an object to write SQL codes.
         Statement st = con.createStatement();
 
